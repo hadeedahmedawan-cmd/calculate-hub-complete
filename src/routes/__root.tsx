@@ -77,6 +77,11 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 // even as calculators are added or removed, without needing a manual edit.
 const ROUNDED_COUNT = Math.floor(ALL_CALCULATORS.length / 10) * 10;
 
+// TODO: update this once you deploy to your real domain — it also needs
+// updating in src/routes/index.tsx and src/routes/c.$slug.tsx (same value,
+// hardcoded in each file since this project has no shared config file yet).
+const SITE = "https://calculatehub.lovable.app";
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
@@ -88,8 +93,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:description", content: `${ROUNDED_COUNT}+ free calculators, all running in your browser.` },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "CalcHub" },
+      { property: "og:image", content: `${SITE}/og-image.png` },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "CalcHub — free online calculators and converters" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:image", content: `${SITE}/og-image.png` },
     ],
     links: [
       {
