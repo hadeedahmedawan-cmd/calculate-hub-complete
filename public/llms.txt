@@ -1,6 +1,6 @@
 # CalcHub
 
-> 160+ free online calculators and converters for finance, health, math, unit conversion, everyday utilities, cooking, DIY, auto and business. All calculations run client-side — no signup, no tracking.
+> 120+ free online calculators and converters for finance, health, math, unit conversion, everyday utilities, cooking, DIY, auto and business. All calculations run client-side — no signup, no tracking.
 
 CalcHub is a static, backend-free calculator hub. Each tool lives at `/c/<slug>` and is defined in a shared registry so pages render consistently with fast client-side compute.
 
