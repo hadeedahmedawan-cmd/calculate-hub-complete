@@ -39,12 +39,16 @@ const FAQS: { q: string; a: string }[] = [
   },
 ];
 
+// Round down to the nearest 10 so the public-facing count stays accurate
+// even as calculators are added or removed, without needing a manual edit.
+const ROUNDED_COUNT = Math.floor(ALL_CALCULATORS.length / 10) * 10;
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "CalcHub — 160+ free calculators and converters" },
+      { title: `CalcHub — ${ROUNDED_COUNT}+ free calculators and converters` },
       { name: "description", content: "A large, fast collection of free calculators: mortgage, BMI, unit converters, tax, GPA, QR codes, and more. No signup." },
-      { property: "og:title", content: "CalcHub — 160+ free calculators" },
+      { property: "og:title", content: `CalcHub — ${ROUNDED_COUNT}+ free calculators` },
       { property: "og:description", content: "Free calculators for finance, health, converters, math, cooking, home projects and more." },
       { property: "og:url", content: "https://calculatehub.lovable.app/" },
     ],
@@ -87,7 +91,7 @@ function Home() {
             <span>{ALL_CALCULATORS.length}+ calculators, all free, no signup</span>
           </div>
           <h1 className="mt-4 text-4xl font-bold tracking-tight text-foreground md:text-6xl">
-            CalcHub — 160+ Free Online Calculators &amp; Converters
+            CalcHub — {ROUNDED_COUNT}+ Free Online Calculators &amp; Converters
           </h1>
           <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
             Every calculator you need — finance, health, converters, math, cooking, DIY.
