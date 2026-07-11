@@ -1,0 +1,24 @@
+# CalcHub
+
+> 160+ free online calculators and converters for finance, health, math, unit conversion, everyday utilities, cooking, DIY, auto and business. All calculations run client-side — no signup, no tracking.
+
+CalcHub is a static, backend-free calculator hub. Each tool lives at `/c/<slug>` and is defined in a shared registry so pages render consistently with fast client-side compute.
+
+## Pages
+
+- [Home](/): Searchable index of every calculator, grouped by category.
+
+## Popular calculators
+
+- [Mortgage Calculator](/c/mortgage): Monthly payment, total interest and payoff estimate.
+- [Loan Calculator](/c/loan): Amortized monthly payment for any loan.
+- [Compound Interest](/c/compound-interest): Grow savings with compounding over time.
+- [Income Tax Estimate](/c/income-tax): Take-home pay after taxes and deductions.
+- [BMI Calculator](/c/bmi): Body Mass Index from height and weight.
+- [Calorie Calculator](/c/calories): Daily calorie needs (Mifflin–St Jeor).
+- [Percentage Calculator](/c/percentage): X% of Y, plus percent change.
+- [Age Calculator](/c/age): Exact age in years, months and days.
+- [Unit Converter — Length](/c/length): Meters, feet, miles, kilometers and more.
+- [Currency Converter](/c/currency): Live exchange rates between world currencies.
+- [QR Code Generator](/c/qr-code): Instant QR codes for URLs, text or vCards.
+- [Password Generator](/c/password): Cryptographically strong random passwords.
