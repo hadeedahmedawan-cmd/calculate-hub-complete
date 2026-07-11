@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { ALL_CALCULATORS } from "@/lib/calculators/registry";
 
 function NotFoundComponent() {
   return (
@@ -72,15 +73,19 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
+// Round down to the nearest 10 so the public-facing count stays accurate
+// even as calculators are added or removed, without needing a manual edit.
+const ROUNDED_COUNT = Math.floor(ALL_CALCULATORS.length / 10) * 10;
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "CalcHub — 160+ free calculators" },
+      { title: `CalcHub — ${ROUNDED_COUNT}+ free calculators` },
       { name: "description", content: "Free calculators for finance, health, converters, math, and more." },
       { property: "og:title", content: "CalcHub" },
-      { property: "og:description", content: "160+ free calculators, all running in your browser." },
+      { property: "og:description", content: `${ROUNDED_COUNT}+ free calculators, all running in your browser.` },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "CalcHub" },
       { name: "twitter:card", content: "summary_large_image" },
